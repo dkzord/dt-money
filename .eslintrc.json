@@ -1,0 +1,10 @@
+{
+  "extends":[
+    "@rocketseat/eslint-config/react",
+    "plugin:react-hooks/recommended"
+  ],
+  "rules":{
+    "linebreak-style": 0,
+    "no-unused-vars": "off"
+  }
+}

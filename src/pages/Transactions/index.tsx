@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { Header } from '@/components/Header'
 import { Summary } from '@/components/Summary/index'
 import { SearchForm } from './components/SearchForm'
+import { dataFormatter, priceFormatter } from '@/utils/formatter'
 import { TransactionContext } from '@/contexts/TransactionContext'
 
 import * as S from './styles'
@@ -31,22 +32,11 @@ export const Transactions = () => {
                         : undefined
                     }
                   >
-                    {new Intl.NumberFormat('pt-BR', {
-                      style: 'currency',
-                      currency: 'BRL',
-                    }).format(transaction.price)}
+                    {priceFormatter.format(transaction.price)}
                   </S.PriceHighlight>
                 </td>
                 <td>{transaction.category}</td>
-                <td>
-                  {new Intl.DateTimeFormat('pt-BR', {
-                    year: 'numeric',
-                    month: 'numeric',
-                    day: 'numeric',
-                    hour: 'numeric',
-                    minute: 'numeric',
-                  }).format(new Date(transaction.createdAt))}
-                </td>
+                <td>{dataFormatter.format(new Date(transaction.createdAt))}</td>
               </tr>
             ))}
           </tbody>

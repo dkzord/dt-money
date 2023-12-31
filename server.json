@@ -1,0 +1,124 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento Web",
+      "type": "income",
+      "category": "Venda",
+      "price": 1400,
+      "createdAt": "2021-03-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "description": "Pizza",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 58,
+      "createdAt": "2023-12-30T20:55:00.000Z"
+    },
+    {
+      "id": 3,
+      "description": "Aluguel",
+      "type": "outcome",
+      "category": "Moradia",
+      "price": 1200,
+      "createdAt": "2023-12-29T10:30:00.000Z"
+    },
+    {
+      "id": 4,
+      "description": "Salário",
+      "type": "income",
+      "category": "Trabalho",
+      "price": 3000,
+      "createdAt": "2023-12-28T15:45:00.000Z"
+    },
+    {
+      "id": 5,
+      "description": "Luz",
+      "type": "outcome",
+      "category": "Serviços",
+      "price": 150,
+      "createdAt": "2023-12-27T12:20:00.000Z"
+    },
+    {
+      "id": 6,
+      "description": "Freelance de design",
+      "type": "income",
+      "category": "Trabalho",
+      "price": 800,
+      "createdAt": "2023-12-26T18:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "description": "Internet",
+      "type": "outcome",
+      "category": "Serviços",
+      "price": 100,
+      "createdAt": "2023-12-25T09:10:00.000Z"
+    },
+    {
+      "id": 8,
+      "description": "Renda Fixa",
+      "type": "income",
+      "category": "Investimento",
+      "price": 500,
+      "createdAt": "2023-12-24T16:30:00.000Z"
+    },
+    {
+      "id": 9,
+      "description": "Combustível",
+      "type": "outcome",
+      "category": "Transporte",
+      "price": 200,
+      "createdAt": "2023-12-23T14:15:00.000Z"
+    },
+    {
+      "id": 10,
+      "description": "Consultoria",
+      "type": "income",
+      "category": "Trabalho",
+      "price": 1200,
+      "createdAt": "2023-12-22T11:40:00.000Z"
+    },
+    {
+      "id": 11,
+      "description": "Água",
+      "type": "outcome",
+      "category": "Serviços",
+      "price": 80,
+      "createdAt": "2023-12-21T17:20:00.000Z"
+    },
+    {
+      "id": 12,
+      "description": "Venda de Produto",
+      "type": "income",
+      "category": "Venda",
+      "price": 600,
+      "createdAt": "2023-12-20T13:50:00.000Z"
+    },
+    {
+      "id": 13,
+      "description": "Telefone",
+      "type": "outcome",
+      "category": "Serviços",
+      "price": 50,
+      "createdAt": "2023-12-19T10:10:00.000Z"
+    },
+    {
+      "id": 14,
+      "description": "Investimento em Ações",
+      "type": "income",
+      "category": "Investimento",
+      "price": 700,
+      "createdAt": "2023-12-18T14:45:00.000Z"
+    },
+    {
+      "id": 15,
+      "description": "Reforma da Casa",
+      "type": "outcome",
+      "category": "Moradia",
+      "price": 1500,
+      "createdAt": "2023-12-17T09:30:00.000Z"
+    }
+  ]
+}

@@ -1,10 +1,33 @@
+import { useEffect, useState } from 'react'
 import { Header } from '@/components/Header'
 import { Summary } from '@/components/Summary/index'
 import { SearchForm } from './components/SearchForm'
 
 import * as S from './styles'
 
+interface Transaction {
+  id: number
+  description: string
+  type: string
+  category: string
+  price: number
+  createdAt: string
+}
+
 export const Transactions = () => {
+  const [transaction, setTransaction] = useState<Transaction[]>([])
+
+  const loadTransaction = async () => {
+    const response = await fetch('http://localhost:3333/transactions')
+    const data = await response.json()
+
+    setTransaction(data)
+  }
+
+  useEffect(() => {
+    loadTransaction()
+  }, [])
+
   return (
     <div>
       <Header />
@@ -15,36 +38,36 @@ export const Transactions = () => {
 
         <S.TransationsTable>
           <tbody>
-            <tr>
-              <td width="50%">Desenvolvimento do site</td>
-              <td>
-                <S.PriceHighlight variant="income">
-                  R$ 12.000,00
-                </S.PriceHighlight>
-              </td>
-              <td>Venda</td>
-              <td>12/01/2021</td>
-            </tr>
-            <tr>
-              <td width="50%">Sanduba</td>
-              <td>
-                <S.PriceHighlight variant="outcome">
-                  - R$ 1.200,00
-                </S.PriceHighlight>
-              </td>
-              <td>Alimentação</td>
-              <td>15/01/2021</td>
-            </tr>
-            <tr>
-              <td width="50%">Desenvolvimento do site</td>
-              <td>
-                <S.PriceHighlight variant="income">
-                  R$ 12.000,00
-                </S.PriceHighlight>
-              </td>
-              <td>Venda</td>
-              <td>12/01/2021</td>
-            </tr>
+            {transaction.map((transaction) => (
+              <tr key={transaction.id}>
+                <td width="50%">{transaction.description}</td>
+                <td>
+                  <S.PriceHighlight
+                    variant={
+                      transaction.type === 'income' ||
+                      transaction.type === 'outcome'
+                        ? transaction.type
+                        : undefined
+                    }
+                  >
+                    {new Intl.NumberFormat('pt-BR', {
+                      style: 'currency',
+                      currency: 'BRL',
+                    }).format(transaction.price)}
+                  </S.PriceHighlight>
+                </td>
+                <td>{transaction.category}</td>
+                <td>
+                  {new Intl.DateTimeFormat('pt-BR', {
+                    year: 'numeric',
+                    month: 'numeric',
+                    day: 'numeric',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                  }).format(new Date(transaction.createdAt))}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </S.TransationsTable>
       </S.TransationsContainer>

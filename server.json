@@ -36,7 +36,7 @@
       "id": 5,
       "description": "Luz",
       "type": "outcome",
-      "category": "Serviços",
+      "category": "Moradia",
       "price": 150,
       "createdAt": "2023-12-27T12:20:00.000Z"
     },
@@ -52,7 +52,7 @@
       "id": 7,
       "description": "Internet",
       "type": "outcome",
-      "category": "Serviços",
+      "category": "Moradia",
       "price": 100,
       "createdAt": "2023-12-25T09:10:00.000Z"
     },
@@ -84,7 +84,7 @@
       "id": 11,
       "description": "Água",
       "type": "outcome",
-      "category": "Serviços",
+      "category": "Moradia",
       "price": 80,
       "createdAt": "2023-12-21T17:20:00.000Z"
     },

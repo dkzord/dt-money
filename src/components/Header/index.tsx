@@ -1,13 +1,19 @@
 import logoImg from '@/assets/logo.svg'
-import * as Dialog from '@radix-ui/react-dialog'
+import { useContextSelector } from 'use-context-selector'
+import { TransactionContext } from '@/contexts/TransactionContext'
 import { NewTransactionModal } from '@/components/NewTransactionModal'
 
 import * as S from './styles'
-import { useContext } from 'react'
-import { TransactionContext } from '@/contexts/TransactionContext'
+import * as Dialog from '@radix-ui/react-dialog'
 
 export const Header = () => {
-  const { handleOpenModal, isModalOpen } = useContext(TransactionContext)
+  const handleOpenModal = useContextSelector(TransactionContext, (context) => {
+    return context.handleOpenModal
+  })
+
+  const isModalOpen = useContextSelector(TransactionContext, (context) => {
+    return context.isModalOpen
+  })
 
   return (
     <S.HeaderContainer>

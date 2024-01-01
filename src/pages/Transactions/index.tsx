@@ -32,6 +32,7 @@ export const Transactions = () => {
                         : undefined
                     }
                   >
+                    {transaction.type === 'outcome' && '- '}
                     {priceFormatter.format(transaction.price)}
                   </S.PriceHighlight>
                 </td>

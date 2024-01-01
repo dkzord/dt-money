@@ -119,6 +119,38 @@
       "category": "Moradia",
       "price": 1500,
       "createdAt": "2023-12-17T09:30:00.000Z"
+    },
+    {
+      "description": "Coxinha",
+      "category": "Comida",
+      "price": 5,
+      "type": "outcome",
+      "createdAt": "2024-01-01T00:27:21.765Z",
+      "id": 16
+    },
+    {
+      "description": "Carro velho",
+      "category": "Venda",
+      "price": 6000,
+      "type": "income",
+      "createdAt": "2024-01-01T00:29:46.954Z",
+      "id": 17
+    },
+    {
+      "description": "Saude",
+      "category": "Saude",
+      "price": 800,
+      "type": "outcome",
+      "createdAt": "2024-01-01T00:46:11.540Z",
+      "id": 18
+    },
+    {
+      "description": "Arroz",
+      "category": "Alimento",
+      "price": 11,
+      "type": "outcome",
+      "createdAt": "2024-01-01T00:48:28.540Z",
+      "id": 19
     }
   ]
 }

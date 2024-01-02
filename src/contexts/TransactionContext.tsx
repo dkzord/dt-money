@@ -1,5 +1,5 @@
 import { api } from '@/lib/axios'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { createContext } from 'use-context-selector'
 
 interface Transaction {
@@ -43,7 +43,7 @@ export const TransactionsProvider = ({
     setIsModalOpen(value)
   }
 
-  const fetchTransaction = async (query?: string) => {
+  const fetchTransaction = useCallback(async (query?: string) => {
     const reponse = await api.get('transactions', {
       params: {
         _sort: 'createdAt',
@@ -53,22 +53,25 @@ export const TransactionsProvider = ({
     })
 
     setTransactions(reponse.data)
-  }
+  }, [])
 
-  const createTransaction = async (data: CreateTransactionInput) => {
-    const { description, category, price, type } = data
+  const createTransaction = useCallback(
+    async (data: CreateTransactionInput) => {
+      const { description, category, price, type } = data
 
-    const response = await api.post('transactions', {
-      description,
-      category,
-      price,
-      type,
-      createdAt: new Date(),
-    })
+      const response = await api.post('transactions', {
+        description,
+        category,
+        price,
+        type,
+        createdAt: new Date(),
+      })
 
-    handleOpenModal(false)
-    setTransactions((state) => [response.data, ...state])
-  }
+      handleOpenModal(false)
+      setTransactions((state) => [response.data, ...state])
+    },
+    [],
+  )
 
   useEffect(() => {
     fetchTransaction()
